@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Library aplication</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/" alt="logo-img" id="logo-img"> 
+            <span id="heading">Summer library</span>
+        </div>
+        <div class="userbar">
+            <span>User</span>
+        </div>
+    </header>
+    <main>
+        <section class="sidebar">
+            <div class="buttons">
+                <button id="new-book">Add book</button>
+            </div>
+        </section>
+        <section class="modal">
+            <div class="modal-content">
+                <form action="/">
+                    <h2 class="moda-heading">Fill in info about your book.</h2>
+                    <div class="form-row">
+                        <label for="title">Title:</label>
+                        <input type="text" id="name" maxlength="50">
+                    </div>
+                    <div class="form-row">
+                        <label for="author">Author: </label>
+                        <input type="text" id="author" maxlength="30">
+                    </div>
+                    <div class="form-row">
+                        <label for="pages">Number of pages: </label>
+                        <input type="number">
+                    </div>
+                    <div class="form-row">
+                    </div>
+                    <button>Add to library</button>
+                </form>
+            </div>
+            
+        </section>
+        <section class="main-content">
+            <div class="object-container">
+                <div class="book-tamplate">
+                    <p class="title">
+                    <span class="data-type">Title:</span><span class="data">The Lord of The Ring: The Two Towers.</span>
+                    </p>
+                    <p class="author">
+                    <span class="data-type">Author:</span><span class="data">J.R. Tolkien</span>
+                    </p>
+                    <p class="pages">
+                    <span class="data-type">Pages:</span><span class="data">345</span>
+                    </p>
+                    <p class="status">
+                     <span class="data-type">Status:</span><span class="data">This book is not read</span>
+                    </p>
+                    <button id="read">Read</button>
+                    <button id="delete">Delete</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Copyrights Adrian Holubecki - 2022
+    </footer>
+</body>
+</html>
