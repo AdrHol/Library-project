@@ -25,15 +25,17 @@ const addingButton = document.querySelector('#adding-button');
 
 
 // object constructor for new book 
-function Book(title, author, pages, status) {
-    this.Title = title;
-    this.Author = author;
-    this.Pages = pages;
-    this.Status = status; 
-}
+class Book{
 
-Book.prototype.Display = function(index) {
-    const container = document.querySelector('.object-container');
+    constructor(title, author, pages, status){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
+
+    display(index){
+        const container = document.querySelector('.object-container');
    const card = document.createElement('div');
        card.setAttribute('class', 'book-tamplate');
        card.setAttribute('data-index', `${index}`);
@@ -45,7 +47,7 @@ Book.prototype.Display = function(index) {
        secondSpan.setAttribute('class', 'data-title');
        secondSpan.setAttribute('data-index', `${index}`);
        firstSpan.textContent = 'Title: ';
-       secondSpan.textContent = `${this.Title}`;
+       secondSpan.textContent = `${this.title}`;
            titlePara.appendChild(firstSpan);
            titlePara.appendChild(secondSpan);
 
@@ -57,7 +59,7 @@ Book.prototype.Display = function(index) {
        authorSecondSpan.setAttribute('class', 'data-author');
        authorFirstSpan.setAttribute('data-index', `${index}`);
        authorFirstSpan.textContent = 'Written by: ';
-       authorSecondSpan.textContent = `${this.Author}`;
+       authorSecondSpan.textContent = `${this.author}`;
            authorPara.appendChild(authorFirstSpan);
            authorPara.appendChild(authorSecondSpan);
 
@@ -69,7 +71,7 @@ Book.prototype.Display = function(index) {
            pagesSecondSpan.setAttribute('class', 'data-pages');
            pagesSecondSpan.setAttribute('data-index', `${index}`);
            pagesFirstSpan.textContent = 'Number of pages: ';
-           pagesSecondSpan.textContent = `${this.Pages}`;
+           pagesSecondSpan.textContent = `${this.pages}`;
                pagesPara.appendChild(pagesFirstSpan);
                pagesPara.appendChild(pagesSecondSpan);
 
@@ -82,7 +84,7 @@ Book.prototype.Display = function(index) {
            statusSecondSpan.setAttribute('class', 'data-status');
            statusSecondSpan.setAttribute('data-index', `${index}`);
            statusFirstSpan.textContent = 'This book is: ';
-           statusSecondSpan.textContent = `${this.Status}`;
+           statusSecondSpan.textContent = `${this.status}`;
                statusPara.appendChild(statusFirstSpan);
                statusPara.appendChild(statusSecondSpan);
    
@@ -108,7 +110,10 @@ Book.prototype.Display = function(index) {
        card.appendChild(deleteButton);
 
        container.appendChild(card);
-}
+
+    }
+    
+    }
 
 let libraryArray = [new Book('Hobbit', 'Tolkien', '365', 'Read')];
 
@@ -129,12 +134,12 @@ function loopingOfArray() {
             }
                 for (const book of libraryArray) { 
                     let index = libraryArray.indexOf(book);
-                    book.Display(index);
+                    book.display(index);
                 }
             } else { 
             for (const book of libraryArray) {
                 let index = libraryArray.indexOf(book);
-                book.Display(index);
+                book.display(index);
         }
     }
 }
